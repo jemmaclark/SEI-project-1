@@ -43,6 +43,7 @@ function startGame() {
 //call the start game function
 startGame();
 
+
 // check win function
 function checkWin() {
  if (
