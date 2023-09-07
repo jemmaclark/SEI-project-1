@@ -13,6 +13,7 @@ let isDraw = false;
 //variable to count wins for players
 let playerXWins = 0;
 let playerOWins = 0;
+let draws = 0;
 
 // check win
 function checkWin() {
@@ -42,7 +43,8 @@ function checkDraw() {
         }
         if (isBoardFull) {
             isDraw = true;
-            console.log('Draw!');
+            draws++
+            updateScores();
         }
     }
 }
@@ -59,6 +61,10 @@ function resetBoard() {
 
 // handle click event
 function handleClick(box) {
+    if (winningPlayer) {
+        return;
+    }
+    
     if (box.innerText === '') {
         box.innerText = currentPlayer
         
@@ -75,10 +81,10 @@ function handleClick(box) {
             } else {
                 playerOWins++;
             }
-            console.log(winningPlayer + ' won');
-            console.log('Player X: ' + playerXWins + ' wins');
-            console.log('Player O: ' + playerOWins + ' wins');
-            resetBoard();
+            updateScores();
+
+        } else if (isDraw) {
+            updateScores();
         }
 
      //change players
@@ -98,3 +104,15 @@ for (let i = 0; i < boxes.length; i++) {
     });
 }
 
+// reset the game when Play again is clicked
+const playAgainBtn = document.getElementById('play-again-btn')
+playAgainBtn.addEventListener('click', function () {
+    resetBoard();
+})
+
+//update scores on screen
+function updateScores() {
+    document.getElementById('x-wins').innerText = 'X Won: ' + playerXWins;
+    document.getElementById('draw').innerText = 'Draw: ' + draws;
+    document.getElementById('o-wins').innerText = 'O Won: ' + playerOWins;
+}
