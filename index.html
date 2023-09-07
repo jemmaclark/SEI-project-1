@@ -10,6 +10,12 @@
 
     <h1>Tic Tac Toe</h1>
 
+    <div id="select-player">
+        <p>Select your symbol</p>
+        <button id="chooseX">X</button>
+        <button id="chooseO">O</button>
+    </div>
+
     <div class="board">
         <div class="box"></div>
         <div class="box"></div>
@@ -30,9 +36,17 @@
             <div id="o-wins">O Won: 0</div>
         </div>
         <div class="reset-btn">
-            <button id="play-again-btn">Play Again</button>
+            <button id="play-again-btn">Play Again... hehe</button>
         </div>
     </div>
+
+    <audio id="winSound" preload="auto" autoplay="false">
+        <source src="michael-jackson-hee-hee-made-with-Voicemod-technology.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio id="drawSound" preload="auto" autoplay="false">
+        <source src="michael-jackson-phrase-made-with-Voicemod-technology.mp3" type="audio/mpeg">
+    </audio>
 
     <script src="app.js"></script>
 </body>

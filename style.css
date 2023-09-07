@@ -69,3 +69,37 @@ h1 {
     border: 1px solid red;
     color: red;
 }
+
+#select-player {
+    display: flex;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(215, 133, 181, 0.7);
+    position: fixed;
+    color: red;
+    text-shadow: 2px 2px 4px rgb(255, 255, 255);
+    font-size: 40px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+}
+
+#chooseX, #chooseO {
+    display: inline-block;
+    margin: 5px auto;
+    border: solid red;
+    padding: 20px 40px;
+    font-size: 30px;
+    background-color: lemonchiffon;
+    color: red;
+    cursor: pointer;
+}
+
+#chooseX:hover, #chooseO:hover {
+    background-color:red;
+    color: white;
+}
+

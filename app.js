@@ -15,7 +15,35 @@ let playerXWins = 0;
 let playerOWins = 0;
 let draws = 0;
 
-// check win
+//variable to start game
+let gameStarted = false;
+
+//function to choose player and start game
+function startGame() {
+    const selectPlayer = document.getElementById('select-player')
+    const chooseXBtn = document.getElementById('chooseX')
+    const chooseOBtn = document.getElementById('chooseO')
+
+    chooseXBtn.addEventListener('click', function () {
+        if (!gameStarted) {
+            currentPlayer = 'X'
+            selectPlayer.style.display = 'none'
+            gameStarted = true
+        }
+    })
+
+    chooseOBtn.addEventListener('click', function () {
+        if (!gameStarted) {
+            currentPlayer = 'O'
+            selectPlayer.style.display = 'none';
+            gameStarted = true
+        }
+    })
+}
+//call the start game function
+startGame();
+
+// check win function
 function checkWin() {
  if (
     (boxes[0].innerText === currentPlayer && boxes[1].innerText === currentPlayer && boxes[2].innerText === currentPlayer) ||
@@ -28,8 +56,14 @@ function checkWin() {
     (boxes[2].innerText === currentPlayer && boxes[4].innerText === currentPlayer && boxes[6].innerText === currentPlayer)
     ) {
         winningPlayer = currentPlayer;
+        playWinSound();
     }
-    
+}
+
+//function to play win sound
+function playWinSound() {
+    const winSound = document.getElementById('winSound');
+    winSound.play();
 }
 
 //function to check for draw
@@ -45,6 +79,10 @@ function checkDraw() {
             isDraw = true;
             draws++
             updateScores();
+
+            //draw sound
+            const drawSound = document.getElementById('drawSound');
+            drawSound.play();
         }
     }
 }
