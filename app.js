@@ -29,6 +29,7 @@ function startGame() {
             currentPlayer = 'X'
             selectPlayer.style.display = 'none'
             gameStarted = true
+            playStartSound();
         }
     })
 
@@ -37,6 +38,7 @@ function startGame() {
             currentPlayer = 'O'
             selectPlayer.style.display = 'none';
             gameStarted = true
+            playStartSound();
         }
     })
 }
@@ -59,6 +61,11 @@ function checkWin() {
         winningPlayer = currentPlayer;
         playWinSound();
     }
+}
+
+function playStartSound() {
+    const startSound = document.getElementById('startSound');
+    startSound.play();
 }
 
 //function to play win sound
