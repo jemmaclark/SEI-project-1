@@ -24,7 +24,9 @@ I have transformed the classic game of Tic Tac Toe into an engaging web game usi
 ## Preview
 
 Player selection
+
 ![Screenshot of the final player selection.](Screen-Shot-2023-09-08-at-10.25.18-am.png)
 
 Game Board
+
 ![Screenshot of the game board.](Screen-Shot-2023-09-08-at-10.24.21-am.png)
